@@ -10,4 +10,6 @@ def get_env_variable(key: str) -> str:
     return value
 
 TELEGRAM_BOT_TOKEN = get_env_variable("TELEGRAM_BOT_TOKEN")
-OPENAI_API_KEY = get_env_variable("OPENAI_API_KEY")
+# OPENAI_API_KEY = get_env_variable("OPENAI_API_KEY")
+ANTHROPIC_API_KEY = get_env_variable("ANTHROPIC_API_KEY")
+GOOGLE_API_KEY = get_env_variable("GOOGLE_API_KEY")
