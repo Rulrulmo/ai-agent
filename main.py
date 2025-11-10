@@ -9,7 +9,7 @@ from telegram.ext import (
     filters,
 )
 from env import TELEGRAM_BOT_TOKEN, ANTHROPIC_API_KEY
-from tools import WebSearchTool
+from tools import naver_search_tool, google_search_tool
 
 os.environ["ANTHROPIC_API_KEY"] = ANTHROPIC_API_KEY
 
@@ -33,7 +33,6 @@ class ChatBotCrew:
             """,
             llm="anthropic/claude-sonnet-4-20250514",
             # llm="openai/o4-mini",
-            tools=[WebSearchTool()],
         )
 
     @task
@@ -51,6 +50,7 @@ class ChatBotCrew:
             질문이 정보성 질문의 경우, 핵심 내용을 요약하고 신뢰할 수 있는 출처(URL)를 포함해야 합니다.
             분석 과정이나 단계별 설명 없이, 최종 답변만 출력하세요.
             """,
+            tools=[naver_search_tool, google_search_tool],
         )
 
     @crew
