@@ -9,6 +9,8 @@ from telegram.ext import (
     filters,
 )
 from env import TELEGRAM_BOT_TOKEN, ANTHROPIC_API_KEY
+from tools import WebSearchTool
+
 os.environ["ANTHROPIC_API_KEY"] = ANTHROPIC_API_KEY
 
 # from env import TELEGRAM_BOT_TOKEN, OPENAI_API_KEY
@@ -31,7 +33,7 @@ class ChatBotCrew:
             """,
             llm="anthropic/claude-sonnet-4-20250514",
             # llm="openai/o4-mini",
-            tools=[],
+            tools=[WebSearchTool()],
         )
 
     @task
