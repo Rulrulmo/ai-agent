@@ -12,3 +12,5 @@ wheels/
 .env
 .mypy_cache
 
+# Firebase
+firebase_keys.json
